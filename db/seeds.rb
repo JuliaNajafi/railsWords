@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Playlist.destroy_all
+Word.destroy_all
+
+investment = Playlist.create(
+  category: "Investment/Financial")
+
+Word.create([
+  {englishword: "invent", otherword: "投资", pinyin: "touzi", playlist: investment},
+  {englishword: "market", otherword: "市场", pinyin: "shichang", playlist: investment}
+  ])
