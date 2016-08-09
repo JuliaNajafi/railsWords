@@ -9,6 +9,8 @@
 Playlist.destroy_all
 Word.destroy_all
 
+
+
 investment = Playlist.create(
   category: "Investment/Financial")
 
