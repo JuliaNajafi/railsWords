@@ -1,12 +1,17 @@
 class WordsController < ApplicationController
-
+  before_action :set_word, only: [:show, :update, :destroy]
   def index
+
+    # @playlist = params(:playlist_id)
+    # @words = @playlist.words.all
+
     @words = Word.all
 
     render json: @words
   end
 
   def show
+
     render json: @word
   end
 

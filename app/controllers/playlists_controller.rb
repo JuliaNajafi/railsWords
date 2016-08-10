@@ -1,7 +1,6 @@
 class PlaylistsController < ApplicationController
   before_action :set_playlist, only: [:show, :update, :destroy]
 
-  
   def index
     @playlists = Playlist.all
 
@@ -9,7 +8,7 @@ class PlaylistsController < ApplicationController
   end
 
   def show
-    render json: @playlist
+    render json: @playlist, include: :words
   end
 
   def create
