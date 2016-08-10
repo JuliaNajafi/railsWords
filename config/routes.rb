@@ -7,4 +7,6 @@ Rails.application.routes.draw do
     resources :words
   end
 
+  get 'getapi', to: 'api#get_api'
+
 end
