@@ -39,7 +39,7 @@ class PlaylistsController < ApplicationController
     end
 
     def playlist_params
-      params.require(:playlist).permit(:category)
+      params.require(:playlist).permit(:category, :words)
     end
 
 end
