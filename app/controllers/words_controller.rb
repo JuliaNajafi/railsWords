@@ -2,9 +2,6 @@ class WordsController < ApplicationController
   before_action :set_word, only: [:show, :update, :destroy]
   def index
 
-    # @playlist = params(:playlist_id)
-    # @words = @playlist.words.all
-
     @words = Word.all
 
     render json: @words
@@ -16,6 +13,7 @@ class WordsController < ApplicationController
   end
 
   def create
+    puts params
     @word = Word.new(word_params)
 
     if @word.save
@@ -43,6 +41,6 @@ class WordsController < ApplicationController
     end
 
     def word_params
-      params.require(:word).permit(:englishword, :otherword, :pinyin, :example, :playlist_id )
+      params.require(:word).permit(:englishword, :otherword, :playlist_id )
     end
 end #end of class
